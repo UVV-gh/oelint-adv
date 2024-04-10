@@ -104,6 +104,13 @@ class TestClassOelintVarOverride(TestBaseClass):
                                      PACKAGECONFIG:remove = "b"
                                      ''',
                                  },
+                                 {
+                                     'oelint_adv_test.bb':
+                                     '''
+                                     A    += "a"
+                                     A    += "b"
+                                     ''',
+                                 },
                              ],
                              )
     def test_good(self, input_, id_, occurrence):
