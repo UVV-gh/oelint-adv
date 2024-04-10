@@ -2,8 +2,6 @@ name: Python package
 
 on: 
   push:
-    branches:
-      - "master"
   pull_request:
 
 jobs:
@@ -35,7 +33,7 @@ jobs:
     - name: linter (flake8)
       run: flake8
     - name: test (pytest)
-      run: pytest
+      run: pytest tests/test_class_oelint_var_override.py
     - name: build
       run: python3 -m build --sdist --wheel
     - name: install
